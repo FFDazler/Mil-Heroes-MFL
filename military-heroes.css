@@ -1,4 +1,4 @@
-/* Military Heroes MFL theme — staging build 6 */
+/* Military Heroes MFL theme — staging build 7 */
 :root {
   --mh-bg: #080a0c;
   --mh-panel: rgba(18, 21, 23, 0.97);
@@ -15,6 +15,7 @@
   --mh-max-width: 1280px;
   --mh-banner: url("https://ffdazler.github.io/Mil-Heroes-MFL/assets/branding/military-heroes-banner.jpg");
   --mh-background: url("https://ffdazler.github.io/Mil-Heroes-MFL/assets/branding/military-heroes-background.jpg");
+  --mh-hall-background: url("https://ffdazler.github.io/Mil-Heroes-MFL/assets/branding/military-heroes-hall-background.jpg");
 }
 
 * {
@@ -81,6 +82,16 @@ a:focus-visible {
 body.full-width .pagebody {
   max-width: none;
   background: transparent !important;
+}
+
+/* Hall of Honor artwork appears only when the screen has genuine side margins. */
+@media (min-width: 1500px) {
+  body,
+  body.full-width {
+    background:
+      linear-gradient(rgba(5, 7, 8, 0.12), rgba(5, 7, 8, 0.3)),
+      var(--mh-hall-background) center top / cover no-repeat fixed !important;
+  }
 }
 
 #contentframe,
@@ -510,6 +521,23 @@ button:hover {
 div.mobile-wrap {
   border-color: var(--mh-line);
   background: transparent;
+}
+
+/* The real league has 30-player rosters plus draft picks on the trade screen. */
+#body_options_05 .report th {
+  padding: 5px 8px;
+}
+
+#body_options_05 .report td {
+  padding: 4px 8px;
+  line-height: 1.2;
+}
+
+#body_options_05 input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  min-height: 0;
+  margin: 0;
 }
 
 .homepagemessage {
