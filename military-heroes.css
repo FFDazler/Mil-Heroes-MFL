@@ -1,4 +1,4 @@
-/* Military Heroes MFL theme — staging build 7 */
+/* Military Heroes MFL theme — production build 8 */
 :root {
   --mh-bg: #080a0c;
   --mh-panel: rgba(18, 21, 23, 0.97);
@@ -69,6 +69,12 @@ a:focus-visible {
 
 .pageheader {
   display: none;
+}
+
+/* Retired footer artwork still injected by legacy MFL league HTML. */
+img[src*="6j7l02uO_o.png"],
+p:has(> img[src*="6j7l02uO_o.png"]) {
+  display: none !important;
 }
 
 .pagebody {
