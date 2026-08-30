@@ -1,3 +1,4 @@
+/* Military Heroes MFL theme — staging build 5 */
 :root {
   --mh-bg: #080a0c;
   --mh-panel: rgba(18, 21, 23, 0.97);
@@ -13,6 +14,7 @@
   --mh-radius: 8px;
   --mh-max-width: 1280px;
   --mh-banner: url("https://ffdazler.github.io/Mil-Heroes-MFL/assets/branding/military-heroes-banner.jpg");
+  --mh-background: url("https://ffdazler.github.io/Mil-Heroes-MFL/assets/branding/military-heroes-background.jpg");
 }
 
 * {
@@ -20,16 +22,17 @@
 }
 
 html {
-  background: var(--mh-bg);
+  background: var(--mh-bg) !important;
 }
 
-body {
+body,
+body.full-width {
   min-width: 0;
   margin: 0;
   color: var(--mh-text);
   background:
-    radial-gradient(circle at 50% -10%, rgba(179, 138, 82, 0.18), transparent 34rem),
-    linear-gradient(145deg, #111518 0%, var(--mh-bg) 44%, #12100e 100%);
+    linear-gradient(rgba(5, 7, 8, 0.18), rgba(5, 7, 8, 0.38)),
+    var(--mh-background) center top / cover no-repeat fixed !important;
   background-attachment: fixed;
   font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
@@ -50,6 +53,19 @@ a:focus-visible {
   text-decoration-color: var(--mh-red);
 }
 
+.pagebody a,
+.pagebody a:link,
+.pagebody a:active,
+.pagebody a:visited {
+  color: #f1d5a3;
+}
+
+.pagebody a:hover,
+.pagebody a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: var(--mh-red);
+}
+
 .pageheader {
   display: none;
 }
@@ -58,6 +74,13 @@ a:focus-visible {
   width: 100%;
   max-width: none;
   padding: 0 16px 36px;
+  color: var(--mh-text);
+  background: transparent !important;
+}
+
+body.full-width .pagebody {
+  max-width: none;
+  background: transparent !important;
 }
 
 #contentframe,
@@ -85,9 +108,21 @@ a:focus-visible {
 /* Primary MFL menu */
 .myfantasyleague_menu {
   border: 0;
-  border-bottom: 1px solid var(--mh-line);
-  background: rgba(5, 7, 8, 0.98);
+  border-bottom: 3px solid var(--mh-bronze);
+  background: rgba(5, 7, 8, 0.98) !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.myfantasyleague_menu ul,
+.myfantasyleague_menu ul li ul,
+.myfantasyleague_menu ul ul li {
+  background: #0d1012 !important;
+}
+
+.myfantasyleague_menu ul,
+.myfantasyleague_menu ul li ul {
+  border-bottom-color: var(--mh-bronze) !important;
+  border-top-color: var(--mh-bronze) !important;
 }
 
 .myfantasyleague_menu > ul {
@@ -103,10 +138,32 @@ a:focus-visible {
   letter-spacing: 0.025em;
 }
 
+.myfantasyleague_menu ul li a,
+.myfantasyleague_menu ul ul li a,
+.myfantasyleague_menu ul ul li.has-sub a {
+  border-color: rgba(210, 173, 112, 0.2) !important;
+  color: #eceff0 !important;
+}
+
 .myfantasyleague_menu li:hover > a,
 .myfantasyleague_menu li:focus-within > a {
   color: #fff;
-  background: var(--mh-red);
+  background: var(--mh-red) !important;
+}
+
+.myfantasyleague_menu > label span,
+.myfantasyleague_menu ul li label span,
+.myfantasyleague_tabmenu > label span {
+  background: var(--mh-bronze) !important;
+}
+
+.myfantasyleague_menu > label span::before,
+.myfantasyleague_menu > label span::after,
+.myfantasyleague_menu ul li label span::before,
+.myfantasyleague_menu ul li label span::after,
+.myfantasyleague_tabmenu > label span::before,
+.myfantasyleague_tabmenu > label span::after {
+  background: #101315 !important;
 }
 
 /* League shortcut navigation */
@@ -155,8 +212,18 @@ a:focus-visible {
   margin-bottom: 14px;
   border: 1px solid var(--mh-line);
   border-radius: var(--mh-radius);
-  background: #0d1012;
+  background: #0d1012 !important;
   overflow: hidden;
+}
+
+.myfantasyleague_tabmenu ul#homepagetabs {
+  border-bottom-color: var(--mh-bronze) !important;
+  background: #0d1012 !important;
+}
+
+.myfantasyleague_tabmenu #homepagetabs li a {
+  border-color: rgba(210, 173, 112, 0.2) !important;
+  color: #eceff0 !important;
 }
 
 .myfantasyleague_tabmenu ul {
@@ -183,6 +250,12 @@ a:focus-visible {
 .myfantasyleague_tabmenu li:hover a {
   color: #fff;
   background: var(--mh-red);
+}
+
+.myfantasyleague_tabmenu #homepagetabs li.currenttab,
+.myfantasyleague_tabmenu #homepagetabs li.currenttab:hover {
+  background: var(--mh-red) !important;
+  box-shadow: none;
 }
 
 /* Homepage grid */
@@ -213,6 +286,13 @@ a:focus-visible {
   box-shadow: var(--mh-shadow);
 }
 
+table.report,
+table.homepagemodule,
+.homepagecolumn .homepagemodule {
+  color: var(--mh-text) !important;
+  background: var(--mh-panel) !important;
+}
+
 caption,
 .homepagemodule caption,
 .homepagecolumn .homepagemodule caption {
@@ -231,6 +311,21 @@ caption,
 caption span {
   padding-left: 0;
   background: none;
+}
+
+caption a,
+caption a:link,
+caption a:active,
+caption a:visited,
+.homepagecolumn .homepagemodule caption a,
+.homepagecolumn .homepagemodule caption a:link,
+.homepagecolumn .homepagemodule caption a:visited {
+  color: #f1d5a3 !important;
+}
+
+caption a:hover,
+.homepagecolumn .homepagemodule caption a:hover {
+  color: #fff !important;
 }
 
 .report th,
@@ -257,11 +352,37 @@ caption span {
 
 .oddtablerow,
 .eventablerow {
-  background: transparent;
+  color: var(--mh-text) !important;
+  background: transparent !important;
 }
 
 .eventablerow {
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(255, 255, 255, 0.025) !important;
+}
+
+.report .oddtablerow td,
+.report .eventablerow td,
+.homepagemodule .oddtablerow td,
+.homepagemodule .eventablerow td {
+  border-color: rgba(255, 255, 255, 0.075);
+  color: var(--mh-text) !important;
+  background: transparent !important;
+}
+
+.pagebody .report td a,
+.pagebody .report td a:link,
+.pagebody .report td a:active,
+.pagebody .report td a:visited,
+.pagebody .homepagemodule td a,
+.pagebody .homepagemodule td a:link,
+.pagebody .homepagemodule td a:active,
+.pagebody .homepagemodule td a:visited {
+  color: #f1d5a3;
+}
+
+.pagebody .report td a:hover,
+.pagebody .homepagemodule td a:hover {
+  color: #fff;
 }
 
 .report tr:hover > td,
@@ -278,6 +399,48 @@ td.reportfooter {
 
 .warning {
   color: #efc482;
+}
+
+.pagebody h2,
+.pagebody h3 {
+  color: #f2f4f5;
+}
+
+.pagebody h2 a,
+.pagebody h2 a:link,
+.pagebody h2 a:active,
+.pagebody h2 a:visited,
+.pagebody h3 a,
+.pagebody h3 a:link,
+.pagebody h3 a:active,
+.pagebody h3 a:visited {
+  color: #f1d5a3;
+}
+
+.pagebody h2 a:hover,
+.pagebody h3 a:hover {
+  color: #fff;
+}
+
+.reportnavigation,
+span.reportnavigation {
+  color: var(--mh-muted);
+}
+
+.reportnavigationheader,
+.reportnavigation .currentweek {
+  color: #efc482;
+}
+
+.reportnavigation a,
+.reportnavigation a:link,
+.reportnavigation a:active,
+.reportnavigation a:visited {
+  color: #f1d5a3;
+}
+
+.reportnavigation a:hover {
+  color: #fff;
 }
 
 /* Standings and franchise artwork */
@@ -344,6 +507,23 @@ button:hover {
   scrollbar-width: thin;
 }
 
+div.mobile-wrap {
+  border-color: var(--mh-line);
+  background: transparent;
+}
+
+.homepagemessage {
+  border-color: var(--mh-line);
+  color: var(--mh-text);
+  background: var(--mh-panel) !important;
+}
+
+.homepagemessage td,
+.homepagemessage p,
+.homepagemessage div {
+  color: var(--mh-text);
+}
+
 .pagefooter {
   padding: 18px 12px 28px;
   border-top: 1px solid var(--mh-line);
@@ -385,10 +565,13 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  body {
+  html,
+  body,
+  body.full-width,
+  .pagebody {
     background:
       linear-gradient(180deg, rgba(143, 35, 35, 0.12), transparent 22rem),
-      var(--mh-bg);
+      var(--mh-bg) !important;
     background-attachment: scroll;
   }
 
