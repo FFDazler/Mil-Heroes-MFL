@@ -1,4 +1,4 @@
-/* Military Heroes MFL theme — staging build 5 */
+/* Military Heroes MFL theme — staging build 6 */
 :root {
   --mh-bg: #080a0c;
   --mh-panel: rgba(18, 21, 23, 0.97);
@@ -561,6 +561,13 @@ div.mobile-wrap {
   #standings .franchiseicon,
   .franchiseicon {
     width: 240px;
+  }
+}
+
+/* MFL expands the League Tabs list outside its zero-height mobile shell. */
+@media (max-width: 48em) {
+  .myfantasyleague_tabmenu {
+    overflow: visible;
   }
 }
 
