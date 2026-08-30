@@ -1,0 +1,475 @@
+:root {
+  --mh-bg: #080a0c;
+  --mh-panel: rgba(18, 21, 23, 0.97);
+  --mh-panel-alt: #1b2024;
+  --mh-panel-hover: #242a2f;
+  --mh-text: #f2f4f5;
+  --mh-muted: #b9c0c4;
+  --mh-bronze: #b38a52;
+  --mh-gold: #d2ad70;
+  --mh-red: #8f2323;
+  --mh-line: rgba(210, 173, 112, 0.28);
+  --mh-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
+  --mh-radius: 8px;
+  --mh-max-width: 1280px;
+  --mh-banner: url("https://ffdazler.github.io/Mil-Heroes-MFL/assets/branding/military-heroes-banner.jpg");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--mh-bg);
+}
+
+body {
+  min-width: 0;
+  margin: 0;
+  color: var(--mh-text);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(179, 138, 82, 0.18), transparent 34rem),
+    linear-gradient(145deg, #111518 0%, var(--mh-bg) 44%, #12100e 100%);
+  background-attachment: fixed;
+  font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+a,
+a:link,
+a:visited {
+  color: #f1d5a3;
+  text-decoration-color: rgba(241, 213, 163, 0.5);
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus-visible {
+  color: #ffffff;
+  text-decoration-color: var(--mh-red);
+}
+
+.pageheader {
+  display: none;
+}
+
+.pagebody {
+  width: 100%;
+  max-width: none;
+  padding: 0 16px 36px;
+}
+
+#contentframe,
+.pagefooter {
+  width: min(100%, var(--mh-max-width));
+  max-width: var(--mh-max-width);
+  margin-inline: auto;
+}
+
+#home #contentframe::before {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1600 / 435;
+  margin: 16px 0 12px;
+  border: 1px solid rgba(210, 173, 112, 0.55);
+  border-radius: var(--mh-radius);
+  background-image: var(--mh-banner);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: var(--mh-shadow);
+  content: "";
+}
+
+/* Primary MFL menu */
+.myfantasyleague_menu {
+  border: 0;
+  border-bottom: 1px solid var(--mh-line);
+  background: rgba(5, 7, 8, 0.98);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.myfantasyleague_menu > ul {
+  max-width: var(--mh-max-width);
+  margin-inline: auto;
+}
+
+.myfantasyleague_menu a,
+.myfantasyleague_menu a:link,
+.myfantasyleague_menu a:visited {
+  color: #e6e9ea;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.myfantasyleague_menu li:hover > a,
+.myfantasyleague_menu li:focus-within > a {
+  color: #fff;
+  background: var(--mh-red);
+}
+
+/* League shortcut navigation */
+#hsubmenu {
+  margin: 0 0 10px;
+  overflow-x: auto;
+  border: 1px solid var(--mh-line);
+  border-radius: var(--mh-radius);
+  background: rgba(12, 15, 17, 0.96);
+  scrollbar-width: thin;
+}
+
+#hsubmenuitems {
+  display: flex;
+  min-width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#hsubmenuitems li {
+  float: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+#hsubmenuitems a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--mh-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#hsubmenuitems a:hover,
+#hsubmenuitems a:focus-visible {
+  color: #fff;
+  background: rgba(143, 35, 35, 0.75);
+}
+
+/* Homepage tabs */
+.myfantasyleague_tabmenu {
+  margin-bottom: 14px;
+  border: 1px solid var(--mh-line);
+  border-radius: var(--mh-radius);
+  background: #0d1012;
+  overflow: hidden;
+}
+
+.myfantasyleague_tabmenu ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.myfantasyleague_tabmenu li {
+  float: none;
+}
+
+.myfantasyleague_tabmenu li a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--mh-muted);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.myfantasyleague_tabmenu li.currenttab a,
+.myfantasyleague_tabmenu li:hover a {
+  color: #fff;
+  background: var(--mh-red);
+}
+
+/* Homepage grid */
+#homepagecolumns {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 12px 0;
+  table-layout: fixed;
+}
+
+#homepagecolumns > tbody > tr > .homepagecolumn,
+#homepagecolumns > tr > .homepagecolumn {
+  padding: 0;
+  vertical-align: top;
+}
+
+.homepagemodule,
+.report {
+  width: 100%;
+  margin: 0 0 14px;
+  overflow: hidden;
+  border: 1px solid var(--mh-line);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--mh-radius);
+  color: var(--mh-text);
+  background: var(--mh-panel);
+  box-shadow: var(--mh-shadow);
+}
+
+caption,
+.homepagemodule caption,
+.homepagecolumn .homepagemodule caption {
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 2px solid var(--mh-bronze);
+  color: #fff;
+  background: linear-gradient(100deg, #292d30, #171a1c 68%);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+caption span {
+  padding-left: 0;
+  background: none;
+}
+
+.report th,
+.homepagemodule th {
+  padding: 8px 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(210, 173, 112, 0.24);
+  color: #eceff0;
+  background: #111416;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.report td,
+.homepagemodule td {
+  padding: 8px 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+  color: var(--mh-text);
+  vertical-align: middle;
+}
+
+.oddtablerow,
+.eventablerow {
+  background: transparent;
+}
+
+.eventablerow {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.report tr:hover > td,
+.homepagemodule tr:hover > td {
+  background: var(--mh-panel-hover);
+}
+
+.reportfooter td,
+td.reportfooter {
+  padding: 9px 10px;
+  background: #0e1113;
+  text-align: center;
+}
+
+.warning {
+  color: #efc482;
+}
+
+/* Standings and franchise artwork */
+#standings .ficon,
+#standings .ficonname {
+  text-align: left;
+}
+
+#standings .franchiseicon,
+.franchiseicon {
+  width: min(100%, 300px);
+  max-width: 300px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.franchiseicon:hover {
+  opacity: 0.9;
+}
+
+.newposition td,
+.newposition th {
+  border-top: 2px solid var(--mh-red);
+  box-shadow: none;
+}
+
+/* Forms and controls */
+input,
+select,
+textarea,
+button,
+input[type="submit"],
+input[type="button"] {
+  min-height: 38px;
+  border: 1px solid #586169;
+  border-radius: 5px;
+  color: #111;
+  background: #fff;
+  font: inherit;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  padding: 7px 13px;
+  border-color: var(--mh-bronze);
+  color: #fff;
+  background: #40321f;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+  background: var(--mh-red);
+}
+
+.mobile-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.pagefooter {
+  padding: 18px 12px 28px;
+  border-top: 1px solid var(--mh-line);
+  color: var(--mh-muted);
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+
+  .pagebody {
+    padding-inline: 10px;
+  }
+
+  #homepagecolumns,
+  #homepagecolumns > tbody,
+  #homepagecolumns > tbody > tr,
+  #homepagecolumns > tbody > tr > .homepagecolumn,
+  #homepagecolumns > tr,
+  #homepagecolumns > tr > .homepagecolumn {
+    display: block;
+    width: 100% !important;
+  }
+
+  #homepagecolumns {
+    border-spacing: 0;
+  }
+
+  #standings {
+    min-width: 720px;
+  }
+
+  #standings .franchiseicon,
+  .franchiseicon {
+    width: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background:
+      linear-gradient(180deg, rgba(143, 35, 35, 0.12), transparent 22rem),
+      var(--mh-bg);
+    background-attachment: scroll;
+  }
+
+  .pagebody {
+    padding: 0 6px 24px;
+  }
+
+  #home #contentframe::before {
+    margin: 8px 0;
+    border-radius: 4px;
+    background-size: contain;
+  }
+
+  #hsubmenu {
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+
+  #hsubmenuitems a {
+    padding: 9px 12px;
+    font-size: 0.82rem;
+  }
+
+  .myfantasyleague_tabmenu {
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  .myfantasyleague_tabmenu li a {
+    padding: 9px 12px;
+    font-size: 0.86rem;
+  }
+
+  .homepagemodule,
+  .report {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.28);
+  }
+
+  caption,
+  .homepagemodule caption,
+  .homepagecolumn .homepagemodule caption {
+    padding: 10px 11px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .report th,
+  .homepagemodule th,
+  .report td,
+  .homepagemodule td {
+    padding: 8px;
+  }
+
+  .reportfooter td,
+  td.reportfooter {
+    white-space: normal;
+  }
+
+  #league_chat input[type="text"],
+  #league_chat textarea {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .pagefooter table,
+  .pagefooter tbody,
+  .pagefooter tr,
+  .pagefooter td {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
