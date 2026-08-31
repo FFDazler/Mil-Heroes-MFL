@@ -1,4 +1,4 @@
-/* Military Heroes MFL theme — production build 8 */
+/* Military Heroes MFL theme — production build 13 */
 :root {
   --mh-bg: #080a0c;
   --mh-panel: rgba(18, 21, 23, 0.97);
@@ -481,8 +481,109 @@ span.reportnavigation {
 
 .newposition td,
 .newposition th {
-  border-top: 2px solid var(--mh-red);
+  border-top: 3px solid var(--mh-gold) !important;
   box-shadow: none;
+}
+
+/* Make MFL injury designations unmistakable across its alternate report markup. */
+span.injurystatus,
+#options_08 td.status span.warning,
+#options_236 td.status span.warning,
+#reports_ranks td.player > span.warning,
+#options_117 td.player > span.warning,
+#options_05 .report td > a[class^="position_"] + span.warning {
+  display: inline-block;
+  margin-left: .2em;
+  padding: .05em .28em;
+  border: 1px solid #edc26c;
+  border-radius: 3px;
+  background: #d9a441;
+  color: #080808 !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: .02em;
+  text-decoration: none;
+  vertical-align: .05em;
+}
+
+/* Add/Drop player pickers: replace the legacy white lists with the league theme. */
+#body_add_drop .report th,
+#add_drop .report th {
+  border-color: var(--mh-line) !important;
+  color: #eceff0 !important;
+  background: #111416 !important;
+}
+
+#body_add_drop .report th a,
+#body_add_drop .report th a:link,
+#body_add_drop .report th a:visited,
+#add_drop .report th a,
+#add_drop .report th a:link,
+#add_drop .report th a:visited {
+  color: #eceff0 !important;
+}
+
+#body_add_drop .report td,
+#add_drop .report td,
+#body_add_drop select[size],
+#add_drop select[size] {
+  border-color: var(--mh-line) !important;
+  color: var(--mh-text) !important;
+  background: #0e1113 !important;
+}
+
+#body_add_drop select[size],
+#add_drop select[size] {
+  color-scheme: dark;
+}
+
+#body_add_drop select[size] option,
+#add_drop select[size] option {
+  color: var(--mh-text);
+  background: #0e1113;
+}
+
+#body_add_drop select[size] option:checked,
+#add_drop select[size] option:checked {
+  color: #080808;
+  background: var(--mh-gold);
+}
+
+/* Trades: integrate the expiration and optional-message form with the theme. */
+#options_05 table:has(textarea),
+#options_05 table:has(textarea) tbody,
+#options_05 table:has(textarea) tr {
+  background: transparent !important;
+}
+
+#options_05 table:has(textarea) th,
+#options_05 table:has(textarea) td {
+  border-color: var(--mh-line) !important;
+  color: var(--mh-text) !important;
+  background: #111416 !important;
+}
+
+#options_05 table:has(textarea) select,
+#options_05 table:has(textarea) input:not([type="submit"]):not([type="button"]),
+#options_05 table:has(textarea) textarea {
+  border: 1px solid #586169 !important;
+  color: var(--mh-text) !important;
+  background: #0e1113 !important;
+  color-scheme: dark;
+}
+
+#options_05 table:has(textarea) textarea {
+  width: min(100%, 720px);
+}
+
+#options_05 table:has(textarea) select:focus,
+#options_05 table:has(textarea) input:focus,
+#options_05 table:has(textarea) textarea:focus {
+  border-color: var(--mh-gold) !important;
+  outline: 2px solid rgba(210, 173, 112, .35);
+  outline-offset: 1px;
 }
 
 /* Forms and controls */
